@@ -1,0 +1,40 @@
+.container {
+  max-width: 600px;
+  margin: 20vh auto;
+  border: 1px solid var(--gray-border-color);
+  color: var(--gray-font-color);
+}
+
+.container h1 {
+  padding: 0.5em 1.5em;
+  background-color: var(--gray-background-color);
+  border-bottom: 1px solid var(--gray-border-color);
+}
+
+.container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 2em;
+  background-color: white;
+}
+
+.container .btnGroup {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.container .message {
+  display: none;
+  text-align: center;
+  padding: 1em;
+  background-color: var(--warning-background-color);
+  color: var(--warning-color);
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    margin: 10vh auto;
+  }
+}

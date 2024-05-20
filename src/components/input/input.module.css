@@ -1,0 +1,13 @@
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.formGroup input {
+  padding: 0.5em;
+  border-color: var(--gray-border-color);
+  border-radius: 0.3em;
+  outline: none;
+  font-size: 1em;
+}
