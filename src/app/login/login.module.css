@@ -25,14 +25,6 @@
   gap: 1em;
 }
 
-.container .message {
-  display: none;
-  text-align: center;
-  padding: 1em;
-  background-color: var(--warning-background-color);
-  color: var(--warning-color);
-}
-
 @media screen and (max-width: 480px) {
   .container {
     margin: 10vh auto;

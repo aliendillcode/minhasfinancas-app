@@ -1,13 +1,14 @@
 "use client";
-import styles from "./login.module.css";
+import styles from "../login/login.module.css";
 import InputGroup from "../../components/input/input";
 import { useState } from "react";
 import { toast } from "react-toastify";
-
-export default function Login() {
+export default function signUp() {
   const [user, setUser] = useState({
+    name: "",
     email: "",
     password: "",
+    confPassword: "",
   });
 
   const handleInputValue = (e) => {
@@ -21,12 +22,21 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(user);
+    if (user.name == "") {
+      notify("warn", "Informe seu nome");
+      return;
+    }
     if (user.email == "") {
       notify("warn", "Informe seu Email");
       return;
     }
     if (user.password == "") {
       notify("warn", "Informe sua senha");
+      return;
+    }
+
+    if (user.password != user.confPassword) {
+      notify("warn", "Senha e confirmação não conferem");
       return;
     }
 
@@ -37,8 +47,16 @@ export default function Login() {
   return (
     <main>
       <section className={styles.container}>
-        <h1>Login</h1>
+        <h1>Cadastro de Usuário</h1>
         <form onSubmit={handleSubmit}>
+          <InputGroup
+            label="Nome: *"
+            type="text"
+            name="name"
+            value={user.name}
+            placeholder="Digite seu nome"
+            onChange={handleInputValue}
+          />
           <InputGroup
             label="Email: *"
             type="email"
@@ -55,9 +73,17 @@ export default function Login() {
             placeholder="Digite a senha"
             onChange={handleInputValue}
           />
+          <InputGroup
+            label="Repita a Senha: *"
+            type="password"
+            name="confPassword"
+            value={user.confPassword}
+            placeholder="Repita a senha"
+            onChange={handleInputValue}
+          />
           <div className={styles.btnGroup}>
-            <button className="button btn-success">Entrar</button>
-            <button className="button btn-danger">Cadastrar</button>
+            <button className="button btn-success">Cadastrar</button>
+            <button className="button btn-danger">Cancelar</button>
           </div>
         </form>
       </section>
