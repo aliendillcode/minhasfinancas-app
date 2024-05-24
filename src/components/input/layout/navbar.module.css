@@ -1,0 +1,94 @@
+.container {
+  width: 100%;
+  height: 8vh;
+  background-color: var(--blue-background-color);
+}
+
+.navbar {
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar ul li a {
+  color: var(--light-color);
+  text-decoration: none;
+  padding: 1em;
+  border-radius: 5px;
+}
+
+.navbar ul li a:hover {
+  background-color: var(--light-blue-background-color);
+  color: var(--success-color);
+}
+
+.toogle {
+  background-color: var(--light-color);
+  height: 6vh;
+  width: 60px;
+  margin-right: 2vh;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.toogle:hover {
+  cursor: pointer;
+}
+
+.toogle div {
+  background-color: var(--blue-background-color);
+  width: 80%;
+  height: 15%;
+}
+
+.logo_menu {
+  display: none;
+}
+
+.showToogle {
+  width: 80vw !important;
+}
+
+@media screen and (max-width: 800px) {
+  .toogle {
+    display: flex !important;
+  }
+
+  .logo_menu {
+    display: block;
+  }
+
+  .menu {
+    flex-direction: column !important;
+    justify-content: space-around;
+    position: fixed;
+    top: 8vh;
+    right: 0;
+    height: 50vh;
+    width: 0;
+    z-index: 100;
+    background-color: var(--blue-background-color);
+    transition: 0.3s;
+  }
+
+  .menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu li a {
+    display: block;
+  }
+}

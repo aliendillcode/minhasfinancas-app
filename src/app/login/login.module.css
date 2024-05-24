@@ -3,6 +3,7 @@
   margin: 20vh auto;
   border: 1px solid var(--gray-border-color);
   color: var(--gray-font-color);
+  background-color: var(--light-color);
 }
 
 .container h1 {
@@ -16,10 +17,9 @@
   flex-direction: column;
   gap: 1em;
   padding: 2em;
-  background-color: white;
 }
 
-.container .btnGroup {
+.btnGroup {
   display: flex;
   flex-direction: row;
   gap: 1em;
@@ -28,5 +28,9 @@
 @media screen and (max-width: 480px) {
   .container {
     margin: 10vh auto;
+  }
+
+  .btnGroup {
+    justify-content: space-between;
   }
 }

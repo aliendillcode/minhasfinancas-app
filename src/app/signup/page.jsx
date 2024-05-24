@@ -3,6 +3,8 @@ import styles from "../login/login.module.css";
 import InputGroup from "../../components/input/input";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
+
 export default function signUp() {
   const [user, setUser] = useState({
     name: "",
@@ -10,7 +12,7 @@ export default function signUp() {
     password: "",
     confPassword: "",
   });
-
+  const router = useRouter();
   const handleInputValue = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
@@ -45,48 +47,54 @@ export default function signUp() {
   };
 
   return (
-    <main>
-      <section className={styles.container}>
-        <h1>Cadastro de Usuário</h1>
-        <form onSubmit={handleSubmit}>
-          <InputGroup
-            label="Nome: *"
-            type="text"
-            name="name"
-            value={user.name}
-            placeholder="Digite seu nome"
-            onChange={handleInputValue}
-          />
-          <InputGroup
-            label="Email: *"
-            type="email"
-            name="email"
-            value={user.email}
-            placeholder="Digite o Email"
-            onChange={handleInputValue}
-          />
-          <InputGroup
-            label="Senha: *"
-            type="password"
-            name="password"
-            value={user.password}
-            placeholder="Digite a senha"
-            onChange={handleInputValue}
-          />
-          <InputGroup
-            label="Repita a Senha: *"
-            type="password"
-            name="confPassword"
-            value={user.confPassword}
-            placeholder="Repita a senha"
-            onChange={handleInputValue}
-          />
-          <div className={styles.btnGroup}>
-            <button className="button btn-success">Cadastrar</button>
-            <button className="button btn-danger">Cancelar</button>
-          </div>
-        </form>
-      </section>
-    </main>
+    <section className={styles.container}>
+      <h1>Cadastro de Usuário</h1>
+      <form onSubmit={handleSubmit}>
+        <InputGroup
+          label="Nome: *"
+          type="text"
+          name="name"
+          value={user.name}
+          placeholder="Digite seu nome"
+          onChange={handleInputValue}
+        />
+        <InputGroup
+          label="Email: *"
+          type="email"
+          name="email"
+          value={user.email}
+          placeholder="Digite o Email"
+          onChange={handleInputValue}
+        />
+        <InputGroup
+          label="Senha: *"
+          type="password"
+          name="password"
+          value={user.password}
+          placeholder="Digite a senha"
+          onChange={handleInputValue}
+        />
+        <InputGroup
+          label="Repita a Senha: *"
+          type="password"
+          name="confPassword"
+          value={user.confPassword}
+          placeholder="Repita a senha"
+          onChange={handleInputValue}
+        />
+        <div className={styles.btnGroup}>
+          <button type="submit" className="button btn-success">
+            Cadastrar
+          </button>
+          <button
+            type="button"
+            onClick={() => router.push("/login")}
+            className="button btn-danger"
+          >
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </section>
   );
 }
