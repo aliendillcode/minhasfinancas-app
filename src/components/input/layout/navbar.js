@@ -23,7 +23,7 @@ export default function Navbar() {
           className={`${styles.menu} ${styles[show]}`}
         >
           <li>
-            <Link href="/">Home</Link>
+            <Link href="/dashboard">Dashboard</Link>
           </li>
           <li>
             <Link href="/users">Usuários</Link>
@@ -32,7 +32,7 @@ export default function Navbar() {
             <Link href="/lancamentos">Lançamentos</Link>
           </li>
           <li>
-            <Link href="/login">Login</Link>
+            <Link href="/">Login</Link>
           </li>
         </ul>
 

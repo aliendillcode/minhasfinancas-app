@@ -1,5 +1,5 @@
 "use client";
-import styles from "../login/login.module.css";
+import styles from "../login.module.css";
 import InputGroup from "../../components/input/input";
 import { useState } from "react";
 import { toast } from "react-toastify";

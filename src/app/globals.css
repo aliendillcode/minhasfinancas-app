@@ -2,13 +2,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 :root {
   --gray-background-color: #e0dde0;
   --gray-border-color: #e0dde0;
-  --gray-font-color: #686565;
+  --gray-font-color: #1e2123;
+  --light-gray-background-color: #edeff3;
   --success-background-color: #48874d;
   --success-color: #48874d;
   --danger-background-color: #cd3e41;
@@ -17,6 +19,8 @@
   --warning-color: #9c8428;
   --blue-background-color: #2b3954;
   --light-blue-background-color: aqua;
+  --register-btn-color: #2a3a54;
+  --launch-btn-color: #e6622f;
 }
 
 body {
